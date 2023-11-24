@@ -30,12 +30,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    90deg,
-    rgba(219, 125, 223, 1) 0%,
-    rgba(220, 207, 60, 1) 33%,
-    rgba(255, 0, 0, 1) 100%
-  );
+  background-image: linear-gradient(to right, #f3b664, #b0a695, #f875aa);
 }
 
 .container {
@@ -44,7 +39,7 @@ body {
 }
 
 h1 {
-  color: var(--pl-white);
+  color: #d80032;
   opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -133,4 +128,56 @@ h1 {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
+}
+
+.generateButton {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--vb-violet);
+  text-align: center;
+  border-radius: 0.75rem;
+  border-bottom: 0.35rem solid var(--vb-yellow);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--vb-yellow);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 0 1rem;
+}
+
+.check input {
+  appearance: none; /* apperance is used tyo remove default browser style */
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--vb-cyan);
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.35rem;
+}
+
+.check input:checked {
+  background-color: var(--vb-cyan);
+}
+
+.check input:checked::before {
+  content: '✔';
+  position: absolute;
+  color: var(--dk-text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  left: 50%;
+  top: -3.5px;
+  transform: translateX(-60%) translateY(5%);
+}
+
+.check label {
+  color: var(--pl-white);
+  font-size: 1.25rem;
+  letter-spacing: 0.75px;
 }
