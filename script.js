@@ -19,6 +19,7 @@ let password = '';
 let passwordLength = 10;
 let checkCount = 0;
 handleSlider();
+setIndicator('#ccc');
 
 //--Set passwordLength
 function handleSlider() {
@@ -26,7 +27,7 @@ function handleSlider() {
   lengthDisplay.innerText = passwordLength;
 }
 
-function setIndicator() {
+function setIndicator(color) {
   indicator.style.backgroundColor = color;
 }
 
@@ -92,8 +93,9 @@ async function copyContent() {
 }
 
 function shufflePassword(array) {
-  //--Fisher Yates Method
+  //--Fisher Yates Method use for shuffling
   for (let i = array.length - 1; i > 0; i--) {
+    //--Finding random j
     const j = Math.floor(Math.random() * (i + 1));
     const temp = array[i];
     array[i] = array[j];
